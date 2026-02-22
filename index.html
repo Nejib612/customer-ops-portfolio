@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Nejib Osman — Financial & Client Operations Specialist portfolio." />
+  <title>Nejib Osman | Financial & Client Operations Specialist</title>
+
+  <style>
+    :root{
+      --bg0:#050816;
+      --bg1:#070b1c;
+      --text:#e8eefc;
+      --muted:#b9c6e6;
+      --line:rgba(255,255,255,.08);
+      --btn:#ffffff;
+      --btnText:#0a1025;
+      --btnGhost:rgba(255,255,255,.08);
+      --btnGhostBorder:rgba(255,255,255,.18);
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 480px at 50% 0%, rgba(62,84,255,.12), transparent 55%),
+        radial-gradient(900px 520px at 20% 20%, rgba(0,255,255,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(5,8,22,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      height:62px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+      opacity:.95;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .brand small{color:var(--muted); font-weight:550}
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      font-size:14px;
+      color:var(--muted);
+    }
+    nav a{padding:8px 6px;border-radius:10px; display:inline-flex; align-items:center; gap:8px;}
+    nav a:hover{color:var(--text); background:rgba(255,255,255,.05)}
+
+    /* Hero */
+    .hero{
+      min-height: 62vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:72px 0 34px;
+      border-bottom:1px solid var(--line);
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:44px;
+      letter-spacing:-.8px;
+      line-height:1.1;
+    }
+    .hero p{
+      margin:0 auto 18px;
+      max-width:760px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+    }
+    .hero .meta{
+      margin:0 auto 12px;
+      max-width:760px;
+      color:rgba(185,198,230,.95);
+      font-size:14px;
+    }
+
+    .btnRow{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 18px;
+      border-radius:12px;
+      border:1px solid transparent;
+      font-size:14px;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+      gap:8px;
+    }
+    .btn.primary{
+      background:var(--btn);
+      color:var(--btnText);
+    }
+    .btn.primary:hover{transform:translateY(-1px)}
+    .btn.ghost{
+      background:var(--btnGhost);
+      border-color:var(--btnGhostBorder);
+      color:var(--text);
+    }
+    .btn.ghost:hover{transform:translateY(-1px); background:rgba(255,255,255,.11)}
+
+    /* Sections */
+    section{padding:54px 0; border-bottom:1px solid var(--line)}
+    h2{margin:0 0 14px; font-size:26px; letter-spacing:-.4px}
+    .lead{margin:0 0 22px; color:var(--muted); max-width:820px; line-height:1.7}
+
+    /* Cards / grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:36px}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .card ul{margin:0; padding-left:18px; color:var(--muted)}
+    .card li{margin:8px 0; line-height:1.5}
+
+    /* Highlights */
+    .highlights{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    .pill strong{display:block; font-size:14px; margin-bottom:6px}
+    .pill span{color:var(--muted); font-size:13px; line-height:1.5}
+    @media (max-width: 900px){
+      .highlights{grid-template-columns:1fr}
+    }
+
+    /* Projects area */
+    .projectsGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .projectsGrid{grid-template-columns:1fr}
+    }
+
+    /* Resume embed + thumbnail */
+    .resumeBox{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+    .resumeTop{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+    }
+    .resumeTop .title{
+      font-weight:650;
+      letter-spacing:.2px;
+    }
+    .small{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .thumbRow{
+      display:flex;
+      gap:14px;
+      padding:16px;
+      border-bottom:1px solid var(--line);
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .thumb{
+      width:170px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
+      flex:0 0 auto;
+    }
+    .thumb img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .thumbMeta{
+      flex:1 1 260px;
+      min-width:240px;
+    }
+    .thumbMeta .small{line-height:1.6}
+    .resumeScroll{
+      max-height:380px; /* reduced scroll length */
+      overflow:auto;
+      padding:16px;
+    }
+    .resumeScroll h4{
+      margin:0 0 8px;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(185,198,230,.95);
+    }
+    .resumeLine{height:1px;background:var(--line);margin:12px 0}
+    .resumeRole{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .resumeRole strong{font-size:15px}
+    .resumeRole span{color:var(--muted);font-size:13px}
+    .resumeScroll ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
+    .resumeScroll li{margin:7px 0}
+
+    /* Footer */
+    footer{
+      padding:26px 0;
+      color:rgba(185,198,230,.85);
+      font-size:13px;
+      text-align:center;
+    }
+
+    /* Icons (inline SVG size) */
+    .icon{
+      width:16px; height:16px; display:inline-block;
+      vertical-align:middle;
+      opacity:.92;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <span>Nejib Osman</span>
+          <small>Portfolio</small>
+        </div>
+
+        <nav>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <!-- LinkedIn icon (clickable) -->
+         <a href="https://www.linkedin.com/in/nejib-osman-7bb480246/" target="_blank" rel="noopener" aria-label="LinkedIn">
+  <img src="assets/linkedin.png" alt="LinkedIn" style="width:20px; height:20px; opacity:0.9;">
+</a>
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path d="M6.94 6.5A2.19 2.19 0 1 1 6.94 2.12a2.19 2.19 0 0 1 0 4.38ZM3.75 21.75V8.25h6.38v13.5H3.75ZM13.25 8.25h6.12v1.85h.09c.85-1.46 2.93-3 6.03-3 6.45 0 7.64 4.25 7.64 9.77v4.88h-6.38v-4.33c0-2.07-.04-4.73-2.88-4.73-2.88 0-3.32 2.25-3.32 4.58v4.48h-6.3V8.25Z" fill="rgba(185,198,230,.95)"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <h1>Financial &amp; Client Operations Specialist</h1>
+      <p>Supporting high-volume financial operations and client service in regulated environments.</p>
+      <div class="meta">Twin Cities, Minnesota • Authorized to work in the U.S.</div>
+
+      <div class="btnRow">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
+        <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">
+          Download Resume (PDF)
+        </a>
+      </div>
+
+      <!-- Subtle Metric Highlights -->
+      <div class="highlights">
+        <div class="pill">
+          <strong>High-volume accuracy</strong>
+          <span>Processed 100+ daily transactions while maintaining disciplined control checks and documentation habits.</span>
+        </div>
+        <div class="pill">
+          <strong>Compliance awareness</strong>
+          <span>Worked inside regulated financial operations with strong confidentiality and internal control discipline.</span>
+        </div>
+        <div class="pill">
+          <strong>Team leadership</strong>
+          <span>Led a 12–15 member front-end team, improving workflow flow and reducing service bottlenecks.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About Me</h2>
+      <p class="lead">
+        Computer Science background with professional experience supporting financial operations and high-volume client environments.
+        I focus on transaction accuracy, workflow efficiency, compliance awareness, and consistent service execution under pressure.
+        <br><br>
+        Based in the Twin Cities, Minnesota. Authorized to work in the U.S.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lead">A focused operations skill set built from financial services and high-volume customer operations.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Financial &amp; Operations</h3>
+          <ul>
+            <li>High-volume transaction processing</li>
+            <li>Cash handling and accuracy</li>
+            <li>Workflow coordination</li>
+            <li>Service-level execution</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Compliance &amp; Risk Awareness</h3>
+          <ul>
+            <li>Regulatory compliance awareness</li>
+            <li>Internal controls support</li>
+            <li>Confidential data handling</li>
+            <li>Audit readiness habits</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Leadership &amp; Client Support</h3>
+          <ul>
+            <li>Team supervision (12–15)</li>
+            <li>Escalation handling</li>
+            <li>Conflict resolution</li>
+            <li>Professional client communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (Resume + Case Studies) -->
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="lead">Resume and operational case studies.</p>
+
+      <div class="projectsGrid">
+        <!-- Resume -->
+        <div class="resumeBox">
+          <div class="resumeTop">
+            <div>
+              <div class="title">Embedded Resume</div>
+              <div class="small">Preview below • Download full resume</div>
+            </div>
+            <a class="btn primary" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+          </div>
+          <!-- Reduced scroll length -->
+          <div class="resumeScroll" aria-label="Embedded Resume Scroll Area">
+            <h4>Nejib Osman</h4>
+            <div class="small">Twin Cities, Minnesota • Authorized to work in the U.S.</div>
+            <div class="small">Email: nejibosman12@hotmail.com • LinkedIn: linkedin.com/in/nejib-osman-7bb480246</div>
+
+            <div class="resumeLine"></div>
+
+            <h4>Professional Summary</h4>
+            <div class="small" style="line-height:1.65;">
+              Financial &amp; Client Operations Specialist with 5+ years of experience in high-volume financial and customer service environments.
+              Skilled in transaction processing, cash handling, compliance adherence, workflow coordination, and team supervision.
+              Maintains accuracy, operational discipline, and professional client service in fast-paced settings.
+            </div>
+
+            <div class="resumeLine"></div>
+
+            <h4>Experience</h4>
+
+            <div class="resumeRole">
+              <strong>Client Operations Associate</strong>
+              <span>Wells Fargo — Bloomington, MN | Feb 2022 – Dec 2025</span>
+            </div>
+            <ul>
+              <li>Processed 100+ daily financial transactions with strong accuracy and compliance adherence</li>
+              <li>Managed high-volume cash operations while following internal controls and regulatory standards</li>
+              <li>Resolved account discrepancies and client concerns in structured branch environments</li>
+              <li>Maintained confidentiality and audit readiness</li>
+            </ul>
+
+            <div class="resumeRole" style="margin-top:14px;">
+              <strong>Customer Service Team Lead</strong>
+              <span>Walmart — Faribault, MN | Jun 2019 – Dec 2021</span>
+            </div>
+            <ul>
+              <li>Supervised a 12–15 member team during peak operations</li>
+              <li>Coordinated staffing and workflow to improve service efficiency</li>
+              <li>Trained new employees on POS systems and procedures</li>
+              <li>Supported conflict resolution and customer satisfaction</li>
+            </ul>
+
+            <div class="resumeLine"></div>
+
+            <h4>Education</h4>
+            <div class="small">
+              Bachelor of Science in Computer Science (In Progress)<br/>
+              Metropolitan State University — Saint Paul, MN | 2024 – Present
+            </div>
+
+            <div class="resumeLine"></div>
+
+            <h4>Core Skills</h4>
+            <div class="small" style="line-height:1.7;">
+              Financial &amp; Client Operations • Transaction Processing • Cash Handling • Regulatory Compliance • Internal Controls •
+              Workflow Coordination • Team Supervision • Escalation Handling • Process Improvement • Microsoft Office • POS Systems
+            </div>
+
+            <div style="margin-top:14px;">
+              <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">View Full PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Studies -->
+        <div>
+          <div class="card" style="margin-bottom:18px;">
+            <h3>Case Study: Wells Fargo (Transaction Flow)</h3>
+            <ul>
+              <li><strong>Situation:</strong> High transaction volume with strict accuracy and compliance requirements.</li>
+              <li><strong>Action:</strong> Used consistent verification habits, clear client communication, and disciplined control checks.</li>
+              <li><strong>Impact:</strong> Supported service-level efficiency without sacrificing compliance standards.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Case Study: Walmart (Reducing Bottlenecks)</h3>
+            <ul>
+              <li><strong>Situation:</strong> Peak hours created congestion and higher escalation volume.</li>
+              <li><strong>Action:</strong> Rebalanced staff coverage, improved queue flow, and coached fast service behaviors.</li>
+              <li><strong>Impact:</strong> Improved operational flow for a 12–15 member team and reduced front-end bottlenecks.</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="border-bottom:none;">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Best way to reach me is email. LinkedIn is also open.</p>
+
+      <div class="btnRow" style="justify-content:flex-start;">
+        <a class="btn primary" href="mailto:nejibosman12@hotmail.com">Email Me</a>
+
+        <a class="btn ghost" href="https://www.linkedin.com/in/nejib-osman-7bb480246/" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.94 6.5A2.19 2.19 0 1 1 6.94 2.12a2.19 2.19 0 0 1 0 4.38ZM3.75 21.75V8.25h6.38v13.5H3.75ZM13.25 8.25h6.12v1.85h.09c.85-1.46 2.93-3 6.03-3 6.45 0 7.64 4.25 7.64 9.77v4.88h-6.38v-4.33c0-2.07-.04-4.73-2.88-4.73-2.88 0-3.32 2.25-3.32 4.58v4.48h-6.3V8.25Z" fill="rgba(185,198,230,.95)"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Nejib Osman
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
